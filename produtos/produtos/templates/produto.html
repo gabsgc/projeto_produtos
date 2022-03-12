@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{produto.name}}</title>
+</head>
+
+<body>
+    <div class="container">
+        <a href='/'>
+            <button class="back-button">
+                <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                </svg>
+            </button>
+        </a>
+        <div class="container-image">
+            <img class="product-image" src="{{ produto.image }}" alt="{{ produto.name }}">
+        </div>
+        <div class="product-info">
+            <h2>{{ produto.name }}</h2>
+            <p class="product-description">{{ produto.description }}</p>
+            <p class="product-price">R$ {{ produto.price }}</p>
+        </div>
+    </div>
+</body>
+
+</html>
