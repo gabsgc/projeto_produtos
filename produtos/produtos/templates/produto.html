@@ -26,6 +26,10 @@
             <h2>{{ produto.name }}</h2>
             <p class="product-description">{{ produto.description }}</p>
             <p class="product-price">R$ {{ produto.price }}</p>
+
+            <a href="/editar/{{produto.id}}">
+                <button>Editar</button>
+            </a>
         </div>
     </div>
 </body>

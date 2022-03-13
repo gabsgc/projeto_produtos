@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar novo produto</title>
+    <title>Editar {{produto.name}}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
@@ -17,23 +17,19 @@
             </svg>
         </button>
     </a>
-    <h1 class="title-product">Cadastrar novo produto</h1>
-    <form method="post">  {% csrf_token %}
+    <h1 class="title-product">Editar {{ produto.name }}</h1>
+    <form method="PUT">  {% csrf_token %}
         <div class="input-field">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name">
             <label for="price">Preço</label>
-            <input type="number" step="0.01" id="price" name="price">
+            <input type="text" step="0,01" id="price" name="price" placeholder="{{ produto.price}}">
         </div>
         </br>
         <div class="input-field">
             <label for="image">Url da imagem</label>
-            <input type="text" id="image" name="image">
-            <label for="description">Descrição</label>
-            <textarea type="text" id="description" name="description"></textarea>
+            <input type="text" id="image" name="image" placeholder="{{ produto.image }}">
         </div>
 
-        <button type="submit" class="btn-cadastrar">Cadastrar produto</button>
+        <button type="submit" class="btn-cadastrar">Salvar</button>
     </form>
 </body>
 

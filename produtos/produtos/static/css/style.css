@@ -82,7 +82,7 @@ button {
     padding: 3em 2rem 3rem 0rem;
 }
 
-#title-add-product {
+.title-product {
     text-align: center;
     padding-bottom: 2rem;
 }

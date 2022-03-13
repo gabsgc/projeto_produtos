@@ -61,3 +61,21 @@ def remover_produto(request, produto_id):
             produtos.remove(produto)
             return render(request=request, template_name="index.html", context={"produtos": produtos})
     return render(request=request, template_name="index.html", context={"produtos": produtos}), 404
+ 
+def editar_produto(request, produto_id):
+    if request.method == "GET":
+        for produto in produtos:
+            if produto_id == produto.id:
+                produto_escolhido = produto
+
+    if request.method == "PUT":
+        id = produto.id
+        name = produto.id
+        image = request.PUT.get("image", None)
+        description = produto.description
+        price = request.PUT.get("price", None)
+        produto = Produto(id=id, name=name, image=image, description=description, price=price)
+        produtos[produto.id].append(produto)
+        return render(request=request, template_name="editar.html", context={"produto": produto_escolhido})
+
+    return render(request=request, context={"produto":produto_escolhido}, template_name="editar.html")
