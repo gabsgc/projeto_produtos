@@ -1,4 +1,3 @@
-from email.mime import image
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
@@ -42,3 +41,16 @@ def produto(request, produto_id):
     }
     
     return render(request=request, context=produto_a_exibir, template_name="produto.html")
+
+def cadastrar_produto(request):
+    if request.method == "POST":
+        id = len(produtos) + 1
+        name = request.POST.get("name", None)
+        image = request.POST.get("image", None)
+        description = request.POST.get("description", None)
+        price = request.POST.get("price", None)
+        produto = Produto(id=id, name=name, image=image, description=description, price=price)
+        produtos.append(produto)
+        return render(request=request, template_name="cadastro.html", context={"produtos": produtos})
+    
+    return render(request=request, template_name="cadastro.html", context={"produtos": produtos})

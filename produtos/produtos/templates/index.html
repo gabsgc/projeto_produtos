@@ -1,24 +1,37 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Produtos</title>
 </head>
+
 <body>
     <h1>Olá =)</h1>
     <h4>Confira os produtos disponíveis em nosso catálogo:</h4>
-    <div class="container">
+    <div class="container" id="listar_produtos">
         {% for produto in produtos %}
         <div class="product-card">
-            <h3>{{ produto.name }}</h3>
+            <h3 class="product-name">{{ produto.name }}</h3>
             <img class="product-image" src=" {{ produto.image }}" alt="{{produto.name}}">
             <p class="product-price">R$ {{ produto.price }}</p>
-            <a href="/produto/{{produto.id}}"><button>+ detalhes</button></a>
+            <a href="/produto/{{produto.id}}">
+                <button>Saiba mais</button>
+            </a>
         </div>
         {% endfor %}
     </div>
+    <h4>Para adicionar um novo produto, clique no botão abaixo:</h4>
+    <a href="/cadastrar">
+        <button style="margin: 0 0 2rem 2rem;">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
+            </svg>
+        </button>
+    </a>
 </body>
+
 </html>

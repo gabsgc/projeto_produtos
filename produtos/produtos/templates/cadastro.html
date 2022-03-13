@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar novo produto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <a href='/'>
+        <button class="back-button">
+            <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+            </svg>
+        </button>
+    </a>
+    <h1 id="title-add-product">Cadastrar novo produto</h1>
+    <form method="post">  {% csrf_token %}
+        <div class="input-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name">
+            <label for="price">Preço</label>
+            <input type="number" step="0.01" id="price" name="price">
+        </div>
+        </br>
+        <div class="input-field">
+            <label for="image">Url da imagem</label>
+            <input type="text" id="image" name="image">
+            <label for="description">Descrição</label>
+            <textarea type="text" id="description" name="description"></textarea>
+        </div>
+
+        <button type="submit" class="btn-cadastrar">Cadastrar produto</button>
+    </form>
+</body>
+
+<script>
+</script>
+
+</html>

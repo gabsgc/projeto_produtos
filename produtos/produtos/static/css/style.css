@@ -35,7 +35,13 @@ h1, h4 {
 
 .product-image {
     width: 200px;
+    padding-top: 1.2rem;
     border-radius: 15px;
+}
+
+.product-name {
+    text-align: center;
+    padding-right: 1rem;
 }
 
 button {
@@ -70,4 +76,43 @@ button {
 .product-info {
     width: 100%;
     padding: 3em 2rem 3rem 0rem;
+}
+
+#title-add-product {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+form {
+    margin: 2rem;
+}
+
+label {
+    font-family: 'Ubuntu';
+    padding-left: 2rem;
+}
+
+input, textarea {
+    margin-left: 1.5rem;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    border-color: #2E2E2E;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-cadastrar {
+    margin-top: 2rem; 
+    margin-right: 15rem;
+    width: 120px;
+    float: right;
 }
