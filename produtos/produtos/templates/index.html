@@ -21,12 +21,15 @@
             <a href="/produto/{{produto.id}}">
                 <button>Saiba mais</button>
             </a>
+            <a href="/remover/{{produto.id}}">
+                <button class="btn-delete">Excluir</button>
+            </a>
         </div>
         {% endfor %}
     </div>
     <h4>Para adicionar um novo produto, clique no botão abaixo:</h4>
     <a href="/cadastrar">
-        <button style="margin: 0 0 2rem 2rem;">
+        <button class="btn-add">
             <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
             </svg>

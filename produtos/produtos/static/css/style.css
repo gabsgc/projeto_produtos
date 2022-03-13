@@ -55,6 +55,10 @@ button {
     cursor: pointer;
 }
 
+.btn-add {
+    margin: 0 0 2rem 2rem;
+}
+
 .back-button {
     width: 12rem;
     height: 5rem;
@@ -115,4 +119,9 @@ input:focus, textarea:focus {
     margin-right: 15rem;
     width: 120px;
     float: right;
+}
+
+.btn-delete {
+    margin-top: 1.5rem;
+    background-color: red;
 }

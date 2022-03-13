@@ -54,3 +54,10 @@ def cadastrar_produto(request):
         return render(request=request, template_name="cadastro.html", context={"produtos": produtos})
     
     return render(request=request, template_name="cadastro.html", context={"produtos": produtos})
+
+def remover_produto(request, produto_id):
+    for produto in produtos:
+        if produto_id == produto.id:
+            produtos.remove(produto)
+            return render(request=request, template_name="index.html", context={"produtos": produtos})
+    return render(request=request, template_name="index.html", context={"produtos": produtos}), 404
